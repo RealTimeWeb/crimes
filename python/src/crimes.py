@@ -241,12 +241,12 @@ def _fetch_crime_info(params):
         try:
             result = _get(query) if _CONNECTED else _lookup(query)
         except urllib.error.HTTPError:
-            raise CrimeException("Make sure you entered a valid stock")
+            raise CrimeException("Make sure you entered a valid query")
     else:
         try:
             result = _get(query) if _CONNECTED else _lookup(query)
         except urllib2.HTTPError:
-            raise CrimeException("Make sure you entered a valid stock")
+            raise CrimeException("Make sure you entered a valid query")
 
     if not result:
         raise CrimeException("There were no results")
@@ -266,11 +266,11 @@ def _fetch_crime_info(params):
     return json_res
 
 
-def get_crime_information(ticker):
-    if not isinstance(ticker, str):
-        raise CrimeException("Please enter a string of a stock")
+def get_crime_information(query):
+    if not isinstance(query, str):
+        raise CrimeException("Please enter a valid query")
 
-    params = {'where': ticker}
+    params = {'where': query}
     json_res = _fetch_crime_info(params)
     return json_res
     # stock = Stock._from_json(json_res)

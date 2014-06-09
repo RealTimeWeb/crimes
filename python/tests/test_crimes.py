@@ -2,9 +2,9 @@ import unittest
 from python.src import crimes
 
 
-class TestStockService(unittest.TestCase):
+class TestCrimeDatabase(unittest.TestCase):
 
-    def test_get_stock_online(self):
+    def test_get_crime_info(self):
         crimes.connect()
 
         keys = ['AggravatedAssault', 'Burglary', 'ForcibleRape', 'LarcenyTheft',
