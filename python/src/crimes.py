@@ -267,6 +267,11 @@ def _fetch_crime_info(params):
 
 
 def get_crime_information(query):
+    """
+    Forms and poses the query to get information from the database
+    :param query: the values to retrieve
+    :return: the JSON response
+    """
     if not isinstance(query, str):
         raise CrimeException("Please enter a valid query")
 
