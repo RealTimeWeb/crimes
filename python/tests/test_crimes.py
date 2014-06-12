@@ -11,7 +11,6 @@ class TestCrimeDatabase(unittest.TestCase):
                 'Murder', 'Population', 'Property', 'Total', 'VehicleTheft',
                 'Violent', 'Year']
 
-        # Test getting one stock
         crime_info = crimes.get_crime_information("Year>1990 and Murder>24600")
         self.assertTrue(isinstance(crime_info, list))
 
