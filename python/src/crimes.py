@@ -280,4 +280,5 @@ def get_crime_information(query):
 
     params = {'where': query}
     json_res = _fetch_crime_info(params)
-    return json_res
+    json_list = json_res['_items']
+    return json_list
